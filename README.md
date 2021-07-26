@@ -4,8 +4,12 @@
 
 I bought these real cheap from Marcs for $3.99 and they use an ESP8266EX that I was able to program using CON2.
 
+Once you crack the case open you can see the CON2 on the left side pcb board. This board also contains the ESP8266EX chip on the back side.
+![](https://github.com/imoldovavan/North-WI-FI-Outlet-ESPHome-hack/blob/main/Pics/EnclosureOpen.jpg)
+
 ![](https://github.com/imoldovavan/North-WI-FI-Outlet-ESPHome-hack/blob/main/Pics/ProgrammingConnector.jpg)
 
+Connect your favourite USBtoSerial adapter to CON2 and remember that RXD from adapter connects to TXD at CON2 and so on...
 To get the ESP8266EX into programming mode ground pin GPIO00 and then insert the USBtoSerial into your computer.
 After about 5 seconds disconnect the GPIO00 pin from the ground and you are able to upload the bin file. I used TASMOTIZER for this.
 
