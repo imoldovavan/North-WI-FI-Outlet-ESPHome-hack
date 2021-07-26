@@ -1,0 +1,54 @@
+esphome:
+  name: northoutlet
+  platform: ESP8266
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "b3f257df0ced1f7952f8d66ab208cff6"
+
+wifi:
+  ssid: "WOW"
+  password: "12345678"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Northoutlet Fallback Hotspot"
+    password: "supersecret"
+
+captive_portal:
+
+binary_sensor:
+- platform: gpio
+  pin:
+    number: GPIO13
+    mode: INPUT_PULLUP
+    inverted: True
+  name: "Northoutlet Button"
+  on_press:
+    - switch.toggle: relay 
+- platform: status
+  name: "Northoutle Status"
+
+
+switch:
+- platform: gpio
+  name: "Northoutlet Relay"
+  pin: GPIO5
+  id: relay
+
+output:
+- platform: esp8266_pwm
+  id: s20_green_led
+  pin: GPIO4
+  inverted: True
+
+light:
+- platform: monochromatic
+  name: "Sonoff S20 Green LED"
+  output: s20_green_led
