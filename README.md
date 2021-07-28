@@ -1,4 +1,4 @@
-# North WI-FI Outlet ESPHome hack
+# North WI-FI Outlet ESPHome hack (Model: SWA1)
 
 ![](https://github.com/imoldovavan/North-WI-FI-Outlet-ESPHome-hack/blob/main/Pics/MainBox.jpg)
 
@@ -17,3 +17,6 @@ I provided the yaml file for this so you can figure out from that what pins are 
 - GPIO 13 - Push Button
 - GPIO 05 - Relay and D3 led
 - GPIO 04 - D1 led
+
+Tasmota template for this is:
+{"NAME":"North_Outlet","GPIO":[1,0,1,0,288,224,0,0,1,32,1,1,0,0],"FLAG":0,"BASE":18}
